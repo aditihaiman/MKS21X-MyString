@@ -10,6 +10,7 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
   }
 
   public char charAt(int index) {
+    if (index < 0 || index >= this.length()) throw new IndexOutOfBoundsException;
     return charArray[index];
   }
 
