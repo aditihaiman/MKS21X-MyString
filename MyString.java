@@ -18,10 +18,11 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
   }
 
   public CharSequence subSequence(int start, int end) {
-    CharSequence output = new MyString(this);
+    String output = "";
     for (int x = start; x < end; x++){
-
+      output += this.charArray[x];
     }
+    return output;
   }
 
   public String toString() {
