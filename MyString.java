@@ -10,7 +10,9 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
   }
 
   public char charAt(int index) {
-    if (index < 0 || index >= this.length()) throw new IndexOutOfBoundsException;
+    if (index < 0 || index >= this.length()) {
+      throw new IndexOutOfBoundsException();
+    }
     return charArray[index];
   }
 
@@ -19,6 +21,9 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
   }
 
   public CharSequence subSequence(int start, int end) {
+    if (start < 0 || end < 0 || start >= this.length() || end >= this.length()){
+      throw new IndexOutOfBoundsException();
+    }
     String output = "";
     for (int x = start; x < end; x++){
       output += this.charArray[x];
