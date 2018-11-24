@@ -4,6 +4,7 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
     System.out.println(str.charAt(3));
     System.out.println(str.charAt(-1));
 
+
   }
   private char[] charArray;
 
@@ -25,12 +26,12 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
     return charArray.length;
   }
 
-  public CharSequence subSequence(int start, int end) { //subsequence inclusive of start, exclusive of end
+  public CharSequence subSequence(int start, int end) { //returns subsequence inclusive of start, exclusive of end
     if (start < 0 || end < 0 || start >= this.length() || end > this.length()){
       throw new IndexOutOfBoundsException();
     }
     String output = "";
-    for (int x = start; x < end; x++){ //adds each element to output
+    for (int x = start; x < end; x++){ //adds each element to output String
       output += this.charArray[x];
     }
     return output;
@@ -45,8 +46,14 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
   }
 
   public int compareTo(CharSequence obj) {
+    int output = 0;
     if (obj.equals(null)) throw new NullPointerException();
-    return 0;
+    for (int x = 0; x < obj.length() && x < this.length(); x++) {
+      if (this.charAt(x) + 0 > (obj.charAt(x) + 0)) output = 1; //converts char at the index and compares
+      if (this.charAt(x)== obj.charAt(x)) output = 0;
+      else {output = -1;}
+    }
+    return output;
   }
 
 }
