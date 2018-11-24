@@ -1,9 +1,8 @@
 public class MyString implements CharSequence, Comparable<CharSequence> {
   public static void main(String[] args) {
     MyString str = new MyString("hello");
-    System.out.println(str.charAt(3));
-    System.out.println(str.charAt(-1));
-
+    //System.out.println(str.charAt(3));
+    System.out.println("world".compareTo("worlds"));
 
   }
   private char[] charArray;
@@ -48,11 +47,15 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
   public int compareTo(CharSequence obj) {
     int output = 0;
     if (obj.equals(null)) throw new NullPointerException();
-    for (int x = 0; x < obj.length() && x < this.length(); x++) {
-      if (this.charAt(x) + 0 > (obj.charAt(x) + 0)) output = 1; //converts char at the index and compares
+    for (int x = 0; x < obj.length() && x < this.length(); x++) { //checks equality of chars up to the length of shorter CharSequence
       if (this.charAt(x)== obj.charAt(x)) output = 0;
-      else {output = -1;}
+      else {
+        if ((this.charAt(x)) > (obj.charAt(x))) output = 1;
+        output = -1;
+      }
     }
+    if (output == 0 && this.length() > obj.length()) output = 1; //checks if the two CharSequences have different lengths
+    if (output == 0 && this.length() < obj.length()) output = -1;
     return output;
   }
 
