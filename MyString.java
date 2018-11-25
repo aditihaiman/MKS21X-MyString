@@ -1,11 +1,19 @@
 public class MyString implements CharSequence, Comparable<CharSequence> {
   public static void main(String[] args) {
     MyString str = new MyString("hello");
-    //System.out.println(str.charAt(3));
-    System.out.println("world".compareTo("worlds"));
+    MyString str1 = new MyString("world");
+    MyString str2 = new MyString("fish");
+    
+    System.out.println(str.charAt(4));
+    System.out.println("hello".charAt(4));
+    System.out.println();
+    System.out.println(str.compareTo("worlds"));
+    System.out.println("hello".compareTo("worlds"));
 
   }
   private char[] charArray;
+
+//—————————————————————————————————CONSTRUCTORS—————————————————————————————————————————//
 
   public MyString(CharSequence s) {
     charArray = new char[s.length()];
@@ -13,6 +21,8 @@ public class MyString implements CharSequence, Comparable<CharSequence> {
       charArray[x] = s.charAt(x);
     }
   }
+
+//––––––––––––––––––––––––––––––––––METHODS––––––––––––––––––––––––––––––––––––––––––––//
 
   public char charAt(int index) {
     if (index < 0 || index >= this.length()) {
