@@ -1,34 +1,34 @@
 public class MyString implements CharSequence, Comparable<CharSequence> {
-  public static void main(String[] args) {
-    MyString str = new MyString("hello");
-    MyString str1 = new MyString("world");
-    MyString str2 = new MyString("fish");
-
-    System.out.println(str.charAt(4));
-    System.out.println("hello".charAt(4));
-    System.out.println();
-    System.out.println(str2.length());
-    System.out.println("fish".length());
-    System.out.println();
-    System.out.println(str2.subSequence(0, 2));
-    System.out.println("fish".substring(0, 2));
-    System.out.println();
-    System.out.println(str.toString());
-    System.out.println("hello".toString());
-    System.out.println();
-    System.out.println(str.compareTo("worlds"));
-    System.out.println("hello".compareTo("worlds"));
-    System.out.println();
-    System.out.println(str1.compareTo("worl"));
-    System.out.println("world".compareTo("worl"));
-    System.out.println();
-    System.out.println(str1.compareTo("world"));
-    System.out.println("world".compareTo("world"));
-    System.out.println();
-    System.out.println(str2.compareTo("TUNAFISH"));
-    System.out.println("fish".compareTo("TUNAFISH"));
-
-  }
+  // public static void main(String[] args) {
+  //   MyString str = new MyString("hello");
+  //   MyString str1 = new MyString("world");
+  //   MyString str2 = new MyString("fish");
+  //
+  //   System.out.println(str.charAt(4));
+  //   System.out.println("hello".charAt(4));
+  //   System.out.println();
+  //   System.out.println(str2.length());
+  //   System.out.println("fish".length());
+  //   System.out.println();
+  //   System.out.println(str2.subSequence(0, 2));
+  //   System.out.println("fish".substring(0, 2));
+  //   System.out.println();
+  //   System.out.println(str.toString());
+  //   System.out.println("hello".toString());
+  //   System.out.println();
+  //   System.out.println(str.compareTo("worlds"));
+  //   System.out.println("hello".compareTo("worlds"));
+  //   System.out.println();
+  //   System.out.println(str1.compareTo("worl"));
+  //   System.out.println("world".compareTo("worl"));
+  //   System.out.println();
+  //   System.out.println(str1.compareTo("world"));
+  //   System.out.println("world".compareTo("world"));
+  //   System.out.println();
+  //   System.out.println(str2.compareTo("TUNAFISH"));
+  //   System.out.println("fish".compareTo("TUNAFISH"));
+  //
+  // }
 
   private char[] charArray;
 
